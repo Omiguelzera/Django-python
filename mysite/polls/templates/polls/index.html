@@ -1,9 +1,73 @@
-{% if lastest_question_list %}
-    <ul>
-    {% for question in lastest_question_list %}
-            <li><a href="/polls/{{ question.id }}/">{{question.question_text}}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}  
-    <p>No questions yet.</p>
-{% endif %}    
+<style>
+    .container{
+        width:80%;
+        max-width:600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,1);    
+    }
+    h1{
+        text-align: center;
+        color: #333;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li{
+        margin: 10px 0;
+        background-color: #e1e6f0;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        font-size: 18px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    a{
+        text-decoration: none;
+        color: #007bff;
+        font-weight:bold;
+    }
+    a:hover{
+        color: #0056b3;
+    }
+    p{
+        text-align: center;
+        font-size: 18px;
+        color: #777;
+    }
+    .button{
+        bacground-color: #007bff;
+        color:#fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+    
+
+
+</style>
+
+
+<div class="container">
+    {% if lastest_question_list %}
+        <ul>
+        {% for question in lastest_question_list %}
+                <li><a href="/polls/{{ question.id }}/">{{question.question_text}}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}  
+        <p>No questions yet.</p>
+    {% endif %}    
+</div>
